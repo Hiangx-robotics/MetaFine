@@ -1,0 +1,33 @@
+{
+  "object_name": "100906",
+  "parts": {
+    "button": {
+      "affordances": [
+        "graspable",
+        "pressable"
+      ],
+      "link": "link_0",
+      "joint": "joint_0",
+      "joint_type": "revolute",
+      "semantic_label": "toggle_button",
+      "joint_range": [
+        0.0,
+        0.12217304763960307
+      ],
+      "bbox_local": {
+        "min": [
+          -0.473081,
+          -0.4624750036628927,
+          -0.07426443501251366
+        ],
+        "max": [
+          0.447874,
+          0.4624749963371073,
+          0.07426356498748635
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

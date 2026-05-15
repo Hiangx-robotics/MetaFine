@@ -1,0 +1,68 @@
+# Lid Opening 任务 - 高质量批量收集配置
+# 用于收集大量高质量演示数据
+
+# 任务基本信息
+task:
+  name: "lid_opening"
+  description: "开盖任务 - 批量数据收集"
+
+# 目标物体
+object:
+  model_id: "47645"
+  part_name: "countertop-17"
+  joint_name: "joint_0"
+
+# 机器人控制参数
+robot:
+  stiffness: 5000.0
+  damping: 500.0
+  force_limit: 800.0
+
+# 主运动参数
+motion:
+  angle: 20.0
+  steps: 5
+  radius_scale: 0.90
+  keep_orientation: false
+
+# 反向运动参数
+reverse_motion:
+  enabled: false
+  angle: -60.0
+  steps: 3
+  pivot_side: "right"
+  keep_orientation: false
+
+# 抓取策略
+grasp:
+  strategy: "random"     # 使用随机策略增加多样性
+  # id: 0                # 指定单个grasp pose id（注释表示不限制）
+  # ids: [0, 1, 2]       # 或指定id列表供随机选择（注释表示使用所有可用id）
+  pre_grasp_distance: 0.06  # 预抓取距离（米），设为0则禁用预抓取
+
+# 相机视角配置
+camera:
+  eye:
+    x: -0.6
+    y: 0.7
+    z: 0.6
+  target:
+    x: 0.0
+    y: 0.0
+    z: 0.3
+
+# 记录参数
+recording:
+  output_dir: "lid_opening_records/47645"
+  save_video: true
+  visualize: false
+  num_trajectories: 10  # 收集100条轨迹
+
+# 仿真参数
+simulation:
+  backend: "cpu"
+  seed: null             # 随机seed增加多样性
+
+# 调试选项
+debug:
+  verbose: True         # 批量收集时关闭详细输出

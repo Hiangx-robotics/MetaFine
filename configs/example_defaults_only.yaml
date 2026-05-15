@@ -1,0 +1,18 @@
+# Example task graph: all continuation skills use their defaults.
+#
+# A regression check that the new pure_* skills + move_to_direction can be
+# dropped into a chain with no kwargs at all and won't crash. The defaults
+# (pure_slide distance=0.20, pure_rotate angle=60°/axis=z, move_to_direction
+# direction=forward/step=0.05) are tuned so that a careless YAML still
+# produces a runnable task.
+env: multi_skill
+object: cabinet_01
+part: handle
+steps:
+  - skill: grasp_part
+    part_name: handle
+  - skill: pure_slide       # default distance=0.20
+  - skill: move_to_direction  # default direction=forward, step=0.05
+  - skill: release_gripper
+success:
+  joint_value: [">", 0.05, joint_0]

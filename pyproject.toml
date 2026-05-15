@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metafine"
+version = "0.1.0"
+description = "MetaFine: a diagnostic evaluation framework for fine-grained robotic manipulation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "MetaFine Contributors" },
+]
+keywords = [
+    "robotics",
+    "manipulation",
+    "simulation",
+    "evaluation",
+    "vla",
+    "sapien",
+    "maniskill",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "torch>=2.0",
+    "gymnasium>=0.29",
+    "sapien>=3.0.0",
+    "mani_skill>=3.0.0b0",
+    "h5py>=3.8",
+    "pandas>=2.0",
+    "tqdm>=4.65",
+    "tyro>=0.6",
+    "trimesh>=3.23",
+    "transforms3d>=0.4",
+    "opencv-python>=4.7",
+    "pyyaml>=6.0",
+    "transformers>=4.40",
+]
+
+# Optional extras. `pip install -e ".[ai]"` pulls the openai client used by
+# the AI-planner path; `pip install -e ".[dev]"` pulls the test toolchain.
+# Per-policy VLA stacks (pi0 / pi05 / openvla / starvla) deliberately live
+# OUTSIDE this project's dependency set — each one is a separately-installed
+# upstream package with its own (often conflicting) pins. See
+# `core/policies/<name>/README.md` for the per-policy install instructions.
+[project.optional-dependencies]
+ai = ["openai>=1.0"]
+dev = ["pytest>=7.0"]
+
+# Two top-level Python packages: `core` (envs / skills / scenes) and `utils`
+# (helpers). `core.policies.*` is excluded — those subdirs are vendored VLA
+# stacks (pi0, pi05, openvla, openvla-oft, starvla) with their own deps and
+# install scripts; treating them as sub-packages of `core` would force every
+# `pip install -e .` to drag in the union of all VLA dependency sets.
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["core*", "utils*"]
+exclude = [
+    "core.policies",
+    "core.policies.*",
+    "tests",
+    "tests.*",
+]

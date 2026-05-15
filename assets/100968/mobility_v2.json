@@ -1,0 +1,1 @@
+[{"id":0,"parent":1,"joint":"hinge","name":"toggle_button","parts":[{"id":1,"name":"switch"}],"jointData":{"axis":{"origin":[0.3256860000000006,-0.0002500155659419523,0.13263571164123522],"direction":[1,0,0]},"limit":{"a":0,"b":27,"noLimit":false}}},{"id":1,"parent":-1,"joint":"static","name":"base_body","parts":[{"id":2,"name":"base_body"}],"jointData":{}}]

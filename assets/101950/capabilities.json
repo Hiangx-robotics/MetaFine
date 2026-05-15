@@ -1,0 +1,35 @@
+{
+  "object_name": "101950",
+  "parts": {
+    "cap": {
+      "affordances": [
+        "graspable"
+      ]
+    },
+    "body": {
+      "affordances": [
+        "graspable",
+        "liftable",
+        "placeable"
+      ],
+      "link": "link_1",
+      "joint": "joint_1",
+      "joint_type": "fixed",
+      "semantic_label": "usb_body",
+      "bbox_local": {
+        "min": [
+          -0.333479,
+          -0.137061,
+          -0.99519
+        ],
+        "max": [
+          0.34973,
+          0.150606,
+          0.748791
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

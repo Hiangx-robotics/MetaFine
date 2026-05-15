@@ -1,0 +1,13 @@
+# Training data and outputs
+data/
+runs/
+# Cloned repos (install separately)
+pytorch3d/
+# Python / pip
+__pycache__/
+*.pyc
+*.egg-info/
+# Wandb logs
+wandb/
+# Visualizer
+visualizer/

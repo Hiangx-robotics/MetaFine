@@ -1,0 +1,29 @@
+{
+  "object_name": "102812",
+  "parts": {
+    "button": {
+      "affordances": [
+        "graspable",
+        "pressable"
+      ],
+      "link": "link_1",
+      "joint": "joint_1",
+      "joint_type": "fixed",
+      "semantic_label": "switch_frame",
+      "bbox_local": {
+        "min": [
+          -0.311899,
+          -0.680038,
+          -0.866592
+        ],
+        "max": [
+          0.30696,
+          0.741667,
+          0.337675
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

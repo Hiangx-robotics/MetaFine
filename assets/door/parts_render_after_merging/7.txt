@@ -1,0 +1,1 @@
+7 movable_part movable_part

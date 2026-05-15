@@ -1,0 +1,20 @@
+# Same drawer-pulling task as example_grasp_slide_release.yaml, plus
+# intermediate `stages` for per-stage success metrics during policy eval.
+env: multi_skill
+object: cabinet_01
+part: handle
+steps:
+  - skill: grasp_part
+    part_name: handle
+  - skill: pure_slide
+    distance: 0.18
+  - skill: release_gripper
+stages:
+  - name: engaged
+    success: {grasped: handle}
+  - name: pulled
+    success: {joint_value: [">", 0.05, joint_0]}
+  - name: fully_open
+    success: {joint_value: [">", 0.10, joint_0]}
+success:
+  joint_value: [">", 0.10, joint_0]

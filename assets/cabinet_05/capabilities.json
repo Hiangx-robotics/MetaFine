@@ -1,0 +1,33 @@
+{
+  "object_name": "cabinet_05",
+  "parts": {
+    "handle": {
+      "affordances": [
+        "graspable",
+        "openable"
+      ],
+      "link": "link_0",
+      "joint": "joint_0",
+      "joint_type": "revolute",
+      "semantic_label": "rotation_door",
+      "joint_range": [
+        -0.0,
+        1.5707963267948966
+      ],
+      "bbox_local": {
+        "min": [
+          -0.6676797803488559,
+          2.8507232685548445e-08,
+          -0.014869836733266584
+        ],
+        "max": [
+          0.01236621965114415,
+          0.7956090285072326,
+          0.06958016326673344
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

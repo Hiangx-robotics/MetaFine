@@ -1,0 +1,33 @@
+{
+  "object_name": "100189",
+  "parts": {
+    "rotation_lid": {
+      "affordances": [
+        "graspable",
+        "openable"
+      ],
+      "link": "link_0",
+      "joint": "joint_0",
+      "joint_type": "revolute",
+      "semantic_label": "rotation_lid",
+      "joint_range": [
+        -0.6928957130417486,
+        2.4315927138784996
+      ],
+      "bbox_local": {
+        "min": [
+          -1.4614610000000003,
+          -0.0011680000000000024,
+          -0.06057700000000005
+        ],
+        "max": [
+          -4.440892098500626e-16,
+          0.710156,
+          0.76356
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

@@ -1,0 +1,1 @@
+[{"text": "Bottle", "children": [{"text": "Normal Bottle", "children": [{"text": "Body", "objs": ["new-5", "new-4"], "id": 6, "name": "body"}, {"text": "Lid", "objs": ["new-2"], "id": 7, "name": "lid"}, {"text": "Mouth", "objs": ["new-0", "new-1", "original-3", "original-4"], "id": 8, "name": "mouth"}], "id": 1, "name": "normal_bottle"}], "id": 0, "name": "bottle"}]

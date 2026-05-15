@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" font-family="Geist, -apple-system, BlinkMacSystemFont, system-ui, sans-serif" fill="#171717">
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+    <marker id="arrow-ppi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a8a8a8"/>
+    </marker>
+    <linearGradient id="ppi-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#0a72ef" stop-opacity="0.05"/>
+      <stop offset="50%" stop-color="#de1d8d" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#ff5b4f" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ════════ Top: layer eyebrows ════════ -->
+  <text x="200"  y="36" text-anchor="middle" font-family="Geist Mono, ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="600" fill="#888888" letter-spacing="1.5">01 · COMPOSITION</text>
+  <text x="600"  y="36" text-anchor="middle" font-family="Geist Mono, ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="600" fill="#888888" letter-spacing="1.5">02 · GENERATION</text>
+  <text x="1000" y="36" text-anchor="middle" font-family="Geist Mono, ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="600" fill="#888888" letter-spacing="1.5">03 · DIAGNOSTIC</text>
+
+  <!-- ════════ Column 1 — Composition (x: 70..330, two stacked cards) ════════ -->
+  <!-- Card 1A — Atomic skills -->
+  <g transform="translate(70, 70)">
+    <rect width="260" height="100" rx="10" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
+    <text x="20" y="34" font-size="16" font-weight="600">Atomic skills</text>
+    <text x="20" y="58" font-size="13" fill="#5a5a5c">21 primitives · 3 phases</text>
+    <text x="20" y="80" font-family="Geist Mono, ui-monospace, monospace" font-size="11" fill="#a8a8a8">@register_skill · SKILL_REGISTRY</text>
+  </g>
+  <!-- Card 1B — Part-aware assets -->
+  <g transform="translate(70, 210)">
+    <rect width="260" height="100" rx="10" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
+    <text x="20" y="34" font-size="16" font-weight="600">Part-aware assets</text>
+    <text x="20" y="58" font-size="13" fill="#5a5a5c">40+ URDFs · 11 affordances</text>
+    <text x="20" y="80" font-family="Geist Mono, ui-monospace, monospace" font-size="11" fill="#a8a8a8">capabilities.json</text>
+  </g>
+  <!-- "registered via" linkage between the two cards -->
+  <text x="200" y="195" text-anchor="middle" font-family="Geist Mono, ui-monospace, monospace" font-size="10" fill="#a8a8a8" letter-spacing="0.5">closed-set match</text>
+  <line x1="200" y1="170" x2="200" y2="210" stroke="#cccccc" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- ════════ Column 2 — Generation (x: 470..730) ════════ -->
+  <!-- Card 2A — Task graph -->
+  <g transform="translate(470, 70)">
+    <rect width="260" height="100" rx="10" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
+    <text x="20" y="34" font-size="16" font-weight="600">Compositional task graph</text>
+    <text x="20" y="58" font-size="13" fill="#5a5a5c">YAML stages · predicate DSL</text>
+    <text x="20" y="80" font-family="Geist Mono, ui-monospace, monospace" font-size="11" fill="#a8a8a8">configs/*.yaml · predicates.py</text>
+  </g>
+  <!-- Card 2B — Recording + rollout -->
+  <g transform="translate(470, 210)">
+    <rect width="260" height="100" rx="10" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
+    <text x="20" y="34" font-size="16" font-weight="600">Recording + rollout</text>
+    <text x="20" y="58" font-size="13" fill="#5a5a5c">MP solver · 7 VLA backbones</text>
+    <text x="20" y="80" font-family="Geist Mono, ui-monospace, monospace" font-size="11" fill="#a8a8a8">record.py · core/policies/*</text>
+  </g>
+  <!-- Vertical drives-arrow between 2A and 2B -->
+  <line x1="600" y1="170" x2="600" y2="208" stroke="#666666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ════════ Column 3 — Diagnostic axes (x: 870..1130) ════════ -->
+  <!-- U axis -->
+  <g transform="translate(870, 70)">
+    <rect width="260" height="80" rx="10" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
+    <circle cx="22" cy="22" r="4" fill="#0a72ef"/>
+    <text x="34" y="27" font-family="Geist Mono, ui-monospace, monospace" font-size="10" font-weight="600" fill="#0a72ef" letter-spacing="1.5">UNDERSTANDING</text>
+    <text x="20" y="54" font-size="14" font-weight="500">Per-stage success</text>
+    <text x="20" y="72" font-family="Geist Mono, ui-monospace, monospace" font-size="10" fill="#a8a8a8">where the chain breaks</text>
+  </g>
+  <!-- P axis -->
+  <g transform="translate(870, 170)">
+    <rect width="260" height="80" rx="10" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
+    <circle cx="22" cy="22" r="4" fill="#de1d8d"/>
+    <text x="34" y="27" font-family="Geist Mono, ui-monospace, monospace" font-size="10" font-weight="600" fill="#de1d8d" letter-spacing="1.5">PERCEPTION</text>
+    <text x="20" y="54" font-size="14" font-weight="500">DR sweeps · AUSC</text>
+    <text x="20" y="72" font-family="Geist Mono, ui-monospace, monospace" font-size="10" fill="#a8a8a8">light · view · rotation</text>
+  </g>
+  <!-- B axis -->
+  <g transform="translate(870, 270)">
+    <rect width="260" height="80" rx="10" fill="#ffffff" stroke="#e5e5e5" stroke-width="1"/>
+    <circle cx="22" cy="22" r="4" fill="#ff5b4f"/>
+    <text x="34" y="27" font-family="Geist Mono, ui-monospace, monospace" font-size="10" font-weight="600" fill="#ff5b4f" letter-spacing="1.5">BEHAVIOR</text>
+    <text x="20" y="54" font-size="14" font-weight="500">Trajectory smoothness</text>
+    <text x="20" y="72" font-family="Geist Mono, ui-monospace, monospace" font-size="10" fill="#a8a8a8">jerk · vel-var · path</text>
+  </g>
+
+  <!-- ════════ Column transitions ════════ -->
+  <!-- Col 1A (atomic skills) → Col 2A (task graph) -->
+  <line x1="330" y1="120" x2="468" y2="120" stroke="#666666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- Col 1B (assets) → Col 2A (task graph) -->
+  <path d="M 330 260 C 400 260, 400 120, 468 120" stroke="#666666" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Col 2B (rollout) → Col 3 axes (single fan-out) -->
+  <line x1="730" y1="260" x2="838" y2="110" stroke="#666666" stroke-width="1.2" stroke-opacity="0.6" marker-end="url(#arrow)"/>
+  <line x1="730" y1="260" x2="838" y2="210" stroke="#666666" stroke-width="1.2" stroke-opacity="0.6" marker-end="url(#arrow)"/>
+  <line x1="730" y1="260" x2="838" y2="310" stroke="#666666" stroke-width="1.2" stroke-opacity="0.6" marker-end="url(#arrow)"/>
+
+  <!-- ════════ Bottom: results.json strip ════════ -->
+  <g transform="translate(870, 370)">
+    <rect width="260" height="40" rx="20" fill="#0a0a0a"/>
+    <text x="130" y="26" text-anchor="middle" font-family="Geist Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#ededed">results.json · U / P / B</text>
+  </g>
+  <!-- Triple-stop converging arrow into results.json -->
+  <line x1="1000" y1="350" x2="1000" y2="368" stroke="#666666" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- ════════ PPI hybrid loop band ════════ -->
+  <g transform="translate(70, 440)">
+    <rect width="1060" height="70" rx="10" fill="url(#ppi-bg)" stroke="#e5e5e5" stroke-width="1"/>
+    <!-- "Coming soon" pill -->
+    <g transform="translate(20, 20)">
+      <rect width="100" height="22" rx="11" fill="#ffffff" stroke="#e5e5e5"/>
+      <circle cx="14" cy="11" r="3" fill="#ff5b4f"/>
+      <text x="24" y="15" font-family="Geist Mono, ui-monospace, monospace" font-size="9" font-weight="600" letter-spacing="0.8" fill="#171717">COMING SOON</text>
+    </g>
+    <text x="135" y="32" font-size="14" font-weight="600" fill="#171717">Real-Sim Hybrid (PPI)</text>
+    <text x="135" y="52" font-size="12" fill="#5a5a5c">Phone scan → process → import → reproduce. Hosted online evaluation platform.</text>
+    <!-- Step trail on the right -->
+    <g font-family="Geist Mono, ui-monospace, monospace" font-size="10" fill="#888888" letter-spacing="0.5">
+      <text x="650" y="30">01 SCAN</text>
+      <text x="730" y="30">→</text>
+      <text x="755" y="30">02 PROCESS</text>
+      <text x="855" y="30">→</text>
+      <text x="880" y="30">03 IMPORT</text>
+      <text x="965" y="30">→</text>
+      <text x="990" y="30">04 REPRODUCE</text>
+    </g>
+  </g>
+  <!-- Dashed feedback arrow from PPI band → assets card -->
+  <path d="M 200 440 C 200 380, 200 340, 200 312" stroke="#a8a8a8" stroke-width="1.2" stroke-dasharray="4 4" fill="none" marker-end="url(#arrow-ppi)"/>
+
+</svg>

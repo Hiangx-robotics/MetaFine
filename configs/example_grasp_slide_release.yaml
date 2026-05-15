@@ -1,0 +1,23 @@
+# Example task graph: pull a drawer open, then let go.
+#
+# Demonstrates the Phase E composability decomposition: instead of using the
+# all-in-one `slide_along` bundle, we chain three pure-phase skills:
+#
+#   1. grasp_part    (interaction)  -> sets env.engage(handle)
+#   2. pure_slide    (continuation) -> reads env.engaged_part, pulls TCP -Z
+#   3. release_gripper (continuation) -> opens gripper, env.disengage()
+#
+# The success predicate checks the drawer joint actually moved past a
+# threshold — a result you cannot fake by just opening and closing the
+# gripper, so this verifies the full chain executed correctly.
+env: multi_skill
+object: cabinet_01
+part: handle
+steps:
+  - skill: grasp_part
+    part_name: handle
+  - skill: pure_slide
+    distance: 0.18
+  - skill: release_gripper
+success:
+  joint_value: [">", 0.10, joint_0]

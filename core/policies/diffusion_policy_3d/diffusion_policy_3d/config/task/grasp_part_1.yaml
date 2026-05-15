@@ -1,0 +1,45 @@
+name: grasp_part
+
+task_name: grasp_part
+
+shape_meta: &shape_meta
+  obs:
+    point_cloud:
+      shape: [512, 3]
+      type: point_cloud
+    agent_pos:
+      shape: [25]
+      type: low_dim
+  action:
+    shape: [8]
+
+env_runner:
+  _target_: diffusion_policy_3d.env_runner.maniskill_runner.ManiSkillRunner
+  eval_episodes: 20
+  max_steps: 500
+  n_obs_steps: ${n_obs_steps}
+  n_action_steps: ${n_action_steps}
+  fps: 10
+  n_envs: null
+  n_train: null
+  n_test: null
+  control_mode: pd_joint_delta_pos
+  task_name: ${task_name}
+  num_eval_envs: 1
+  sim_backend: cpu
+  device: ${training.device}
+  use_point_crop: ${policy.use_point_crop}
+  use_pc_color: ${policy.use_pc_color}
+  env_kwargs:
+    object_name: "3558"
+    part_name: "cap"
+
+dataset:
+  _target_: diffusion_policy_3d.dataset.maniskill_dataset.ManiSkillDataset
+  zarr_path: /nat/demos/grasp_part/grasp_part_1/maniskill_grasp_part_expert.zarr
+  horizon: ${horizon}
+  pad_before: ${eval:'${n_obs_steps}-1'}
+  pad_after: ${eval:'${n_action_steps}-1'}
+  seed: 42
+  val_ratio: 0.02
+  max_train_episodes: null

@@ -1,0 +1,16 @@
+# Example task graph: grasp the bottle's cap.
+#
+# This is the simplest possible human-written task graph: a single
+# interaction step (grasp_part) on a graspable part. It exercises:
+#   * the YAML loader (utils.task_graph.load_task_graph)
+#   * MultiSkillEnv construction with skill_chain + goal_predicate
+#   * record.py --task-graph mode
+#   * predicate DSL via the `success` block
+env: multi_skill
+object: "3398"
+part: cap
+steps:
+  - skill: grasp_part
+    part_name: cap
+success:
+  grasped: cap

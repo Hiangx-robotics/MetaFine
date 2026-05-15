@@ -1,0 +1,22 @@
+{
+  "object_name": "100047",
+  "parts": {
+    "left_handle": {
+      "affordances": [
+        "graspable"
+      ]
+    },
+    "right_handle": {
+      "affordances": [
+        "graspable"
+      ]
+    },
+    "up_handle": {
+      "affordances": [
+        "graspable"
+      ]
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

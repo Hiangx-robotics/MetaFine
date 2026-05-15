@@ -1,0 +1,51 @@
+{
+  "object_name": "100849",
+  "parts": {
+    "button": {
+      "affordances": [
+        "graspable",
+        "pressable"
+      ],
+      "link": "link_1",
+      "joint": "joint_1",
+      "joint_type": "fixed",
+      "semantic_label": "switch_frame",
+      "bbox_local": {
+        "min": [
+          -0.411521,
+          -0.630187,
+          -0.8058
+        ],
+        "max": [
+          0.398004,
+          0.629074,
+          0.498435
+        ]
+      }
+    },
+    "button_end": {
+      "affordances": [
+        "graspable",
+        "pressable"
+      ],
+      "link": "link_1",
+      "joint": "joint_1",
+      "joint_type": "fixed",
+      "semantic_label": "switch_frame",
+      "bbox_local": {
+        "min": [
+          -0.411521,
+          -0.630187,
+          -0.8058
+        ],
+        "max": [
+          0.398004,
+          0.629074,
+          0.498435
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

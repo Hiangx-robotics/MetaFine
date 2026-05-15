@@ -1,0 +1,9 @@
+# starVLA/examples/FGManip/deploy_policy.yml
+policy_ckpt_path: "path/to/qwen-gr00t-checkpoint"
+unnorm_key: "your_dataset_key"  # e.g., "your_dataset_name" from LeRobot stats
+host: "127.0.0.1"
+port: 10093
+image_size: [224, 224]
+camera_keys: ["hand_camera", "base_camera"]
+use_ddim: true
+num_ddim_steps: 10

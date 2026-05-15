@@ -1,0 +1,25 @@
+# Task graph for pi05 eval on grasp_part (pi0_grasppart checkpoint).
+#
+# The policy was trained on grasp_part (cap on 3398-style bottles), so we
+# evaluate it on the matching scene with stages that report progressively
+# higher levels of contact + lift. The final success comes from the env's
+# native gripper-state heuristic via {grasped: cap}, which matches what
+# GraspPartEnv.evaluate() reports today.
+env: multi_skill
+object: "3398"
+part: cap
+steps:
+  - skill: grasp_part
+    part_name: cap
+stages:
+  - name: approached
+    success: {lifted: [0.45, tcp]}
+  - name: grasped
+    success: {grasped: cap}
+  - name: lifted
+    success:
+      and:
+        - {grasped: cap}
+        - {lifted: [0.50, tcp]}
+success:
+  grasped: cap

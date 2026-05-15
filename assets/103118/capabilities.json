@@ -1,0 +1,29 @@
+{
+  "object_name": "103118",
+  "parts": {
+    "knob": {
+      "affordances": [
+        "graspable",
+        "rotatable"
+      ],
+      "link": "link_4",
+      "joint": "joint_4",
+      "joint_type": "continuous",
+      "semantic_label": "knob",
+      "bbox_local": {
+        "min": [
+          -0.03276948871969837,
+          0.60706,
+          -0.032769947219603676
+        ],
+        "max": [
+          0.032769511280301616,
+          0.628935,
+          0.032770052780396325
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

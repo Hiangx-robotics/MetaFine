@@ -1,0 +1,33 @@
+{
+  "object_name": "cabinet_02",
+  "parts": {
+    "handle": {
+      "affordances": [
+        "graspable",
+        "slidable"
+      ],
+      "link": "link_1",
+      "joint": "joint_1",
+      "joint_type": "prismatic",
+      "semantic_label": "drawer",
+      "joint_range": [
+        0.0,
+        0.31199999999999983
+      ],
+      "bbox_local": {
+        "min": [
+          0.302032,
+          -0.296435,
+          -0.070144
+        ],
+        "max": [
+          0.83764,
+          -0.117899,
+          0.329105
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

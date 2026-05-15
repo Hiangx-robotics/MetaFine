@@ -1,0 +1,42 @@
+{
+    "state": {
+        "joints": {
+            "start": 0,
+            "end": 9,
+            "dtype": "float32",
+            "absolute": true,
+            "rotation_type": null,
+            "original_key": "observation.state"
+        }
+    },
+    "action": {
+        "delta_joints": {
+            "start": 0,
+            "end": 7,
+            "dtype": "float32",
+            "absolute": false,
+            "rotation_type": null,
+            "original_key": "action"
+        },
+        "gripper_close": {
+            "start": 7,
+            "end": 8,
+            "dtype": "float32",
+            "absolute": true,
+            "rotation_type": null,"original_key": "action"
+        }
+    },
+    "video": {
+        "base_camera": {
+            "original_key": "observation.images.base_camera"
+        },
+        "hand_camera": {
+            "original_key": "observation.images.hand_camera"
+        }
+    },
+    "annotation": {
+        "human.action.task_description": {
+            "original_key": "task_index"
+        }
+    }
+}

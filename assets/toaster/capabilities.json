@@ -1,0 +1,12 @@
+{
+  "object_name": "toaster",
+  "parts": {
+    "handler": {
+      "affordances": [
+        "graspable"
+      ]
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

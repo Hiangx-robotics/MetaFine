@@ -1,0 +1,45 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Local data
+demos/
+*.log
+*.h5
+
+# WandB / TensorBoard
+wandb/
+runs/
+
+# Per-policy training artifacts. These directories accumulate checkpoints,
+# adapters, and eval-video MP4s as you run train / evaluate scripts; nothing
+# in them should land in git. Production checkpoints live under /nat/demos.
+core/policies/*/runs/
+core/policies/*/eval_videos/
+core/policies/*/Lerobot/outputs/
+
+# OpenVLA-specific
+core/policies/openvla-oft/dlimp/
+core/policies/openvla/adapter-tmp/
+
+# Smoke test scratch
+smoke_envs.py
+
+# Model weights + binary blobs. Checkpoints belong under /nat/demos, not
+# in the source tree. Use `!path/to/keep` to whitelist a specific file
+# if a future test fixture genuinely needs to be tracked.
+*.pth
+*.safetensors
+*.bin
+*.bag
+*.ckpt
+*.onnx
+*.pt

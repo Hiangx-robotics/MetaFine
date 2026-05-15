@@ -1,0 +1,6 @@
+jsonlines
+numpy
+pyarrow
+tqdm
+datasets<4.0.0
+huggingface-hub

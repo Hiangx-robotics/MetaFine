@@ -1,0 +1,22 @@
+# Example task graph: grasp a knob, rotate it by 60°, then release.
+#
+# Phase-E demonstration #2 — same composition pattern as the slide example
+# but with rotational motion. The chain remains:
+#
+#   interaction -> continuation -> continuation
+#
+# pure_rotate operates on whatever part the previous interaction engaged
+# (env.engaged_part); it never re-grasps. axis="z" rotates around the
+# gripper's local Z, which is the natural twist axis after a top-down grasp.
+env: multi_skill
+object: "102901"          # coffee machine, has a rotatable knob
+part: knob
+steps:
+  - skill: grasp_part
+    part_name: knob
+  - skill: pure_rotate
+    angle_deg: 60.0
+    axis: z
+  - skill: release_gripper
+success:
+  joint_value: [">", 0.30, joint_7]

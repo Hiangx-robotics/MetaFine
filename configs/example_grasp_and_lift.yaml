@@ -1,0 +1,21 @@
+# Example task graph: grasp the bottle's cap and lift it.
+#
+# Two steps demonstrate composition across phases:
+#   * step 0 is an interaction (grasp_part) that engages contact;
+#   * step 1 is a continuation (move_to_direction "up") that operates
+#     while engaged.
+#
+# Success requires BOTH: the gripper still holds the cap AND the TCP has
+# risen above 0.45 m.
+env: multi_skill
+object: "3398"
+part: cap
+steps:
+  - skill: grasp_part
+    part_name: cap
+  - skill: move_to_direction
+    direction: up
+success:
+  and:
+    - {grasped: cap}
+    - {lifted: [0.45, tcp]}

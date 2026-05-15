@@ -1,0 +1,8 @@
+link_0 hinge lever
+link_1 hinge lever
+link_2 hinge lever
+link_3 hinge lever
+link_4 hinge knob
+link_5 free coffee_machine_body
+link_6 hinge portafilter
+link_7 hinge knob

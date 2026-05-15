@@ -1,0 +1,53 @@
+{
+  "object_name": "3678",
+  "parts": {
+    "cap": {
+      "affordances": [
+        "graspable",
+        "openable",
+        "rotatable"
+      ],
+      "link": "link_1",
+      "joint": "joint_1",
+      "joint_type": "continuous",
+      "semantic_label": "rotation_lid",
+      "bbox_local": {
+        "min": [
+          -0.15453268205492693,
+          0.904468,
+          -0.15453331794507308
+        ],
+        "max": [
+          0.15453331794507308,
+          0.991705,
+          0.15453268205492693
+        ]
+      }
+    },
+    "body": {
+      "affordances": [
+        "graspable",
+        "liftable",
+        "placeable"
+      ],
+      "link": "link_0",
+      "joint": "joint_0",
+      "joint_type": "fixed",
+      "semantic_label": "bottle_body",
+      "bbox_local": {
+        "min": [
+          -0.355369,
+          -0.800282,
+          -0.355136
+        ],
+        "max": [
+          0.336585,
+          0.973131,
+          0.336818
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

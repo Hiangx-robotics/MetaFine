@@ -1,0 +1,10 @@
+link_0 slider button
+link_1 slider button
+link_2 slider button
+link_3 slider button
+link_4 slider lid
+link_5 slider container
+link_6 hinge lever
+link_7 hinge knob
+link_8 hinge knob
+link_9 free coffee_machine_body

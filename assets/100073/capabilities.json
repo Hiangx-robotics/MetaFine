@@ -1,0 +1,56 @@
+{
+  "object_name": "100073",
+  "parts": {
+    "cap": {
+      "affordances": [
+        "graspable",
+        "slidable"
+      ],
+      "link": "link_0",
+      "joint": "joint_0",
+      "joint_type": "prismatic",
+      "semantic_label": "lid",
+      "joint_range": [
+        -0.30400000000000005,
+        -0.06400000000000006
+      ],
+      "bbox_local": {
+        "min": [
+          -0.211029,
+          -0.041464,
+          0.559261
+        ],
+        "max": [
+          0.220532,
+          0.035763,
+          1.004449
+        ]
+      }
+    },
+    "body": {
+      "affordances": [
+        "graspable",
+        "liftable",
+        "placeable"
+      ],
+      "link": "link_1",
+      "joint": "joint_1",
+      "joint_type": "fixed",
+      "semantic_label": "usb_body",
+      "bbox_local": {
+        "min": [
+          -0.212675,
+          -0.046007,
+          -1.039631
+        ],
+        "max": [
+          0.220022,
+          0.055024,
+          0.495592
+        ]
+      }
+    }
+  },
+  "source": "auto-derived by utils/derive_capabilities.py",
+  "review_needed": true
+}

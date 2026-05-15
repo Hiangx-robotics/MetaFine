@@ -1,0 +1,26 @@
+# Example task graph: grasp the cap and "insert" it at a world-frame target.
+#
+# Demonstrates the new `insert` continuation skill, which:
+#   1. approaches a target pose along -axis (here straight down) with a
+#      `approach_offset` standoff,
+#   2. then pushes by `depth` past the target to simulate the actual insert.
+#
+# We use a synthetic target_pos here rather than naming a part on the env,
+# because the multi_skill scene loads a single articulated object today —
+# multi-object scenes (where target_part would resolve to a slot on a
+# second object) are future work. The skill's contract is the same in both
+# cases.
+env: multi_skill
+object: "3398"
+part: cap
+steps:
+  - skill: grasp_part
+    part_name: cap
+  - skill: insert
+    target_pos: [0.10, 0.0, 0.20]
+    axis: [0.0, 0.0, -1.0]
+    depth: 0.04
+    approach_offset: 0.08
+  - skill: release_gripper
+success:
+  pose_near: [0.06, tcp, [0.10, 0.0, 0.16]]
