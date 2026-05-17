@@ -170,22 +170,27 @@ pip install -e core/policies/openvla-oft # OpenVLA-OFT
 The end-to-end pipeline: **record → merge → replay → convert → train → evaluate**. Full tutorials on the [project homepage](https://metafine.github.io/user_guide/).
 
 ```bash
-# 1. Record expert demos — single skill, or --task-graph for a multi-stage env
+# 1. Record expert demos — single skill, or --task-graph for a multi-stage env.
+#    Output: demos/<env>/trial_NNNN/{trajectory.h5,trajectory.json}
 python record.py -e grasp_part --object-name 100221 --part-name cap -n 5 --only-count-success
-python record.py --task-graph configs/example_grasp_cap.yaml -n 5
+python record.py --task-graph configs/example_grasp_cap.yaml -n 5 --only-count-success
 
-# 2. Merge raw shards into one trajectory
-python utils/merge_trajectory.py -i demos/grasp_part/100221 \
-    -o demos/grasp_part/100221/trajectory.h5 -p trajectory.h5
+# 2. Merge the per-trial shards (point -i at the env dir; it recurses trial_*)
+python utils/merge_trajectory.py -i demos/grasp_part \
+    -o demos/grasp_part/merged.h5 -p trajectory.h5
 
-# 3. Replay to render observations (output name encodes obs.control.backend)
-python utils/replay_trajectory.py --traj-path demos/grasp_part/100221/trajectory.h5 \
-    -o rgb -c pd_joint_delta_pos -b physx_cpu --use-first-env-state --save-traj --save-video
-# → trajectory.rgb.pd_joint_delta_pos.physx_cpu.h5
+# 3. Replay to render observations. Use the recording's own control mode
+#    (see trajectory.json env_kwargs.control_mode; grasp_part = pd_joint_pos)
+#    + --use-env-states for a faithful, deterministic replay.
+python utils/replay_trajectory.py --traj-path demos/grasp_part/merged.h5 \
+    -o rgb -c pd_joint_pos -b physx_cpu --use-env-states --save-traj --save-video
+# → demos/grasp_part/merged.rgb.pd_joint_pos.physx_cpu.h5
+# For task-graph data add --allow-failure (success is decided at record time;
+# replay can't re-evaluate the goal predicate and must not re-filter).
 
 # 4. Convert for training — LeRobot, or convert_to_rlds for OpenVLA
 python utils/convert_to_lerobot.py \
-    --traj-path demos/grasp_part/100221/trajectory.rgb.pd_joint_delta_pos.physx_cpu.h5 \
+    --traj-path demos/grasp_part/merged.rgb.pd_joint_pos.physx_cpu.h5 \
     --output-dir demos/grasp_part/lerobot_grasp_part \
     --task-name "Grasp the cap of the bottle." --fps 30 --robot-type panda
 
