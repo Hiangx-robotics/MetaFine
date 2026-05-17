@@ -104,7 +104,10 @@ def main():
     parser.add_argument("-i", "--input-dirs", nargs="+")
     parser.add_argument("-o", "--output-path", type=str)
     parser.add_argument("-p", "--pattern", type=str, default="trajectory.h5")
-    parser.add_argument("-s", "--success", type=bool, default=True, help="only merge successful trajectories")
+    def _str2bool(v):
+        return str(v).strip().lower() not in ("0", "false", "no", "n", "off", "")
+    parser.add_argument("-s", "--success", type=_str2bool, default=True,
+                        help="only merge successful trajectories (pass -s False to keep all)")
 
     args = parser.parse_args()
 

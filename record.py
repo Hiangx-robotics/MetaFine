@@ -182,6 +182,21 @@ def main(args):
                 # result is (obs, reward, terminated, truncated, info)
                 obs, reward, terminated, truncated, info = result
                 success = info.get("success", False)
+                # (a) For task graphs, success is decided by the goal
+                # predicate evaluated post-chain (above). RecordEpisode
+                # otherwise persists the success of the LAST in-chain step,
+                # which can be pre-settle and disagree with the predicate.
+                # Overwrite the buffer's final success so the saved
+                # trajectory matches the reported (goal-predicate) result.
+                if task_graph is not None and env is not None:
+                    try:
+                        _buf = getattr(env, "_trajectory_buffer", None)
+                        if _buf is not None and getattr(_buf, "success", None) is not None \
+                                and len(_buf.success) > 0:
+                            _sv = success.item() if hasattr(success, "item") else bool(success)
+                            _buf.success[-1, ...] = bool(_sv)
+                    except Exception as _e:
+                        print(f"[task-graph success persist] skipped: {_e}")
                 if success and "elapsed_steps" in info:
                     try:
                         solution_episode_lengths.append(info["elapsed_steps"].item())
