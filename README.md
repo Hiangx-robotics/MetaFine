@@ -264,14 +264,14 @@ Full contributor guide and code-style conventions: see the user guide.
 
 ## 📑 Citation
 
-A paper describing MetaFine is in preparation. A BibTeX entry will be added here once it is public.
+If MetaFine is useful for your work, please cite the [arXiv paper](https://arxiv.org/abs/2605.19986):
 
 ```bibtex
-@misc{metafine2026,
-  title  = {Beyond Binary Success: A Diagnostic Meta-Evaluation Framework for Fine-Grained Manipulation},
-  author = {Coming soon},
-  year   = {2026},
-  note   = {In preparation}
+@article{xu2026metafine,
+  title   = {Beyond Binary Success: A Diagnostic Meta-Evaluation Framework for Fine-Grained Manipulation},
+  author  = {Xu, He-Yang and Zhang, Pengyuan and Ge, Zongyuan and Hao, Xiaoshuai and Belongie, Serge and Geng, Xin and Peng, Yuxin and Wei, Xiu-Shen},
+  journal = {arXiv preprint arXiv:2605.19986},
+  year    = {2026}
 }
 ```
 
